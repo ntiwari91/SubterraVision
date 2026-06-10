@@ -55,25 +55,20 @@ By default, the script expects test images in `data/test_data/` and loads a pret
 
 
 ## Results
+### Quantitative evaluation
 
-The following tables and figures are placeholders from the manuscript. Fill them in with your final values and images.
+Table 1: PSNR and SSIM metrics for SICE Part 2 testing dataset.
 
-### Tables
-
-- Table 1: Model performance comparison
-
-  | Metric | Baseline | Proposed | Notes |
-  |-------|---------|----------|-------|
-  | PSNR  |         |          |       |
-  | SSIM  |         |          |       |
-  | NIQE  |         |          |       |
-
-- Table 2: Ablation study
-
-  | Component | Description | Result |
-  |----------|-------------|--------|
-  |          |             |        |
-  |          |             |        |
+| S.no | Method | PSNR | SSIM |
+|------|--------|------|------|
+| 1 | SRIE | 14.41 | 0.54 |
+| 2 | LIME | 16.17 | 0.57 |
+| 3 | Li et al. | 15.19 | 0.54 |
+| 4 | RetinexNet | 15.99 | 0.53 |
+| 5 | Wang et al. | 13.52 | 0.49 |
+| 6 | EnlightenGAN | 16.21 | 0.59 |
+| 7 | Zero-DCE | 16.57 | 0.59 |
+| 8 | **SubterraVision** | **17.897** | **0.57** |
 
 ### Figures
 
