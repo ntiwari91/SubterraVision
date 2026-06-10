@@ -53,6 +53,43 @@ python lowlight_test.py
 By default, the script expects test images in `data/test_data/` and loads a pretrained checkpoint from `snapshots_Zero_DCE++/Epoch150.pth`. Adjust the script or checkpoint path if needed.
 
 
+
+## Results
+
+The following tables and figures are placeholders from the manuscript. Fill them in with your final values and images.
+
+### Tables
+
+- Table 1: Model performance comparison
+
+  | Metric | Baseline | Proposed | Notes |
+  |-------|---------|----------|-------|
+  | PSNR  |         |          |       |
+  | SSIM  |         |          |       |
+  | NIQE  |         |          |       |
+
+- Table 2: Ablation study
+
+  | Component | Description | Result |
+  |----------|-------------|--------|
+  |          |             |        |
+  |          |             |        |
+
+### Figures
+
+- Figure 1: Example input and enhanced output
+
+  ![Figure 1](path/to/figure1.png)
+
+- Figure 2: Qualitative comparison with baseline methods
+
+  ![Figure 2](path/to/figure2.png)
+
+- Figure 3: Training loss curves
+
+  ![Figure 3](path/to/figure3.png)
+
+
 ## If you like this work, then consider citing
 
 ```
