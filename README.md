@@ -4,9 +4,10 @@ This is the code of the paper "SubterraVision: A Computational Deep Learning Fra
 This is built upon [ZeroDCE](https://github.com/Li-Chongyi/Zero-DCE)
 
 
-##Architecture
-[Figure 1](<img width="1282" height="735" alt="dllnet" src="https://github.com/user-attachments/assets/29f25eb8-27bd-428f-918c-86cb657a5399" />)
-[Figure 2](<img width="761" height="351" alt="channel" src="https://github.com/user-attachments/assets/7d58d23a-4d4d-4d04-a094-f76ea539ad9e" />)
+## Architecture
+![Figure 1](<img width="1282" height="735" alt="dllnet" src="https://github.com/user-attachments/assets/29f25eb8-27bd-428f-918c-86cb657a5399" />)
+
+![Figure 2](<img width="761" height="351" alt="channel" src="https://github.com/user-attachments/assets/7d58d23a-4d4d-4d04-a094-f76ea539ad9e" />)
 
 ## Setup
 
