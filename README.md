@@ -10,7 +10,7 @@ This is built upon [ZeroDCE](https://github.com/Li-Chongyi/Zero-DCE)
   <img width="1282" alt="DLLNet Architecture"
        src="https://github.com/user-attachments/assets/b2953a87-f424-4201-8b0c-4fae9fb7237f">
   <br><br>
-  <b>Figure 1.</b><br>
+  <b>Figure 1.</b>
   <em>Block diagram of an image enhancement system with local feature extraction and channel self-attention module.</em>
 </p>
 
@@ -20,26 +20,10 @@ This is built upon [ZeroDCE](https://github.com/Li-Chongyi/Zero-DCE)
   <img width="761" alt="Channel Module"
        src="https://github.com/user-attachments/assets/5ca6e0a4-20fd-4030-b0df-b7f5412180eb">
   <br><br>
-  <b>Figure 2.</b><br>
+  <b>Figure 2.</b>
   <em>Detailed channel communication workflow.</em>
 </p>
 
-
-## Setup
-
-1. Create and activate a Python virtual environment:
-
-   ```bash
-   python -m venv venv
-   venv\Scripts\activate
-   ```
-
-2. Upgrade pip and install required packages:
-
-   ```bash
-   python -m pip install --upgrade pip
-   python -m pip install torch torchvision numpy pillow matplotlib scikit-image pytorch-ssim
-   ```
 
 ## Training
 
@@ -79,32 +63,123 @@ By default, the script expects test images in `data/test_data/` and loads a pret
 ## Results
 ### Quantitative evaluation
 
-Table 1: PSNR and SSIM metrics for SICE Part 2 testing dataset.
+<p align="center">
+  <b>Table 1.</b>
+  <em>PSNR and SSIM metrics for the SICE Part 2 testing dataset.</em>
+</p>
 
-| S.no | Method | PSNR | SSIM |
-|------|--------|------|------|
-| 1 | SRIE | 14.41 | 0.54 |
-| 2 | LIME | 16.17 | 0.57 |
-| 3 | Li et al. | 15.19 | 0.54 |
-| 4 | RetinexNet | 15.99 | 0.53 |
-| 5 | Wang et al. | 13.52 | 0.49 |
-| 6 | EnlightenGAN | 16.21 | 0.59 |
-| 7 | Zero-DCE | 16.57 | 0.59 |
-| 8 | **SubterraVision** | **17.897** | **0.57** |
+<table align="center">
+  <thead>
+    <tr>
+      <th>S. No.</th>
+      <th>Method</th>
+      <th>PSNR</th>
+      <th>SSIM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1</td><td>SRIE</td><td>14.41</td><td>0.54</td></tr>
+    <tr><td>2</td><td>LIME</td><td>16.17</td><td>0.57</td></tr>
+    <tr><td>3</td><td>Li et al.</td><td>15.19</td><td>0.54</td></tr>
+    <tr><td>4</td><td>RetinexNet</td><td>15.99</td><td>0.53</td></tr>
+    <tr><td>5</td><td>Wang et al.</td><td>13.52</td><td>0.49</td></tr>
+    <tr><td>6</td><td>EnlightenGAN</td><td>16.21</td><td>0.59</td></tr>
+    <tr><td>7</td><td>Zero-DCE</td><td>16.57</td><td>0.59</td></tr>
+    <tr>
+      <td>8</td>
+      <td><b>SubterraVision</b></td>
+      <td><b>17.897</b></td>
+      <td><b>0.57</b></td>
+    </tr>
+  </tbody>
+</table>
 
-### Figures
+<p align="center">
+  <b>Table 2.</b>
+  <em>Ablation study with training on SICE and validation on the ExDark dataset.</em>
+</p>
+<table align="center">
+  <thead>
+    <tr>
+      <th>Information Flow</th>
+      <th>Skip Connection</th>
+      <th>Channel Attention</th>
+      <th>PSNR</th>
+      <th>SSIM</th>
+      <th>LPIPS</th>
+      <th>MPS</th>
+      <th>NIQE</th>
+      <th>BRISQUE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Multi-path, uniform channel weights</td>
+      <td>Yes</td>
+      <td>No</td>
+      <td>18.31</td>
+      <td>0.6826</td>
+      <td>0.1779</td>
+      <td>0.7523</td>
+      <td>4.4149</td>
+      <td>19.65</td>
+    </tr>
+    <tr>
+      <td>Multi-path + adaptive weighting</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>19.57</td>
+      <td>0.7407</td>
+      <td>0.1435</td>
+      <td>0.7986</td>
+      <td>4.4280</td>
+      <td>18.48</td>
+    </tr>
+    <tr>
+      <td>Curve Iteration = 4</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td><b>22.39</b></td>
+      <td><b>0.8489</b></td>
+      <td><b>0.0800</b></td>
+      <td><b>0.8844</b></td>
+      <td>4.5183</td>
+      <td><b>18.09</b></td>
+    </tr>
+    <tr>
+      <td>Curve Iteration = 8</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>19.28</td>
+      <td>0.7316</td>
+      <td>0.1487</td>
+      <td>0.7914</td>
+      <td>4.4171</td>
+      <td>18.57</td>
+    </tr>
+    <tr>
+      <td>Curve Iteration = 12</td>
+      <td>Yes</td>
+      <td>Yes</td>
+      <td>15.59</td>
+      <td>0.5774</td>
+      <td>0.2530</td>
+      <td>0.6622</td>
+      <td><b>4.3449</b></td>
+      <td>22.01</td>
+    </tr>
+  </tbody>
+</table>
 
-- Figure 1: Example input and enhanced output
 
-  ![Figure 1](path/to/figure1.png)
+### Visual Results
+<p align="center">
+<img width="1017" height="504" alt="image" src="https://github.com/user-attachments/assets/41ac054e-b306-4e73-9f48-f78d5201ee9d" />
+<br>
+<b>Figure 3.</b>
+<em>
+Visualization of SubterraVision with RGB channels.
 
-- Figure 2: Qualitative comparison with baseline methods
-
-  ![Figure 2](path/to/figure2.png)
-
-- Figure 3: Training loss curves
-
-  ![Figure 3](path/to/figure3.png)
 
 
 ## If you like this work, then consider citing
