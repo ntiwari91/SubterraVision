@@ -5,9 +5,25 @@ This is built upon [ZeroDCE](https://github.com/Li-Chongyi/Zero-DCE)
 
 
 ## Architecture
-![Figure 1](<img width="1282" height="735" alt="dllnet" src="https://github.com/user-attachments/assets/29f25eb8-27bd-428f-918c-86cb657a5399" />)
 
-![Figure 2](<img width="761" height="351" alt="channel" src="https://github.com/user-attachments/assets/7d58d23a-4d4d-4d04-a094-f76ea539ad9e" />)
+<p align="center">
+  <img width="1282" alt="DLLNet Architecture"
+       src="https://github.com/user-attachments/assets/b2953a87-f424-4201-8b0c-4fae9fb7237f">
+  <br><br>
+  <b>Figure 1.</b><br>
+  <em>Block diagram of an image enhancement system with local feature extraction and channel self-attention module.</em>
+</p>
+
+<br>
+
+<p align="center">
+  <img width="761" alt="Channel Module"
+       src="https://github.com/user-attachments/assets/5ca6e0a4-20fd-4030-b0df-b7f5412180eb">
+  <br><br>
+  <b>Figure 2.</b><br>
+  <em>Detailed channel communication workflow.</em>
+</p>
+
 
 ## Setup
 
